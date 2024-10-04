@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI - {{title}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'styles/main.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="logo">
+                <a href="#"><h2>LO<span class="danger">GO</span></h2>
+            </div>
+            <div class="sidebar">
+                
+                <a href="{{url_for('admin.dashboard')}}" class="{{actived}}" rel="prerender">
+                    <span class="material-symbols-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="{{url_for('admin.teams')}}" class="{{activet}}" rel="prerender">
+                    <span class="material-symbols-sharp">groups</span>
+                    <h3>Team</h3>
+                </a>
+                <a href="">
+                    <span class="material-symbols-sharp">article</span>
+                    <h3>Forms</h3>
+                </a>
+                <a href="">
+                    <span class="material-symbols-sharp">show_chart</span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="">
+                    <span class="material-symbols-sharp">mail</span>
+                    <h3>Messages</h3>
+                    <span class="message-count">0</span>
+                </a>
+                <a href="">
+                    <span class="material-symbols-sharp">report</span>
+                    <h3>Report</h3>
+                </a>
+                <a href="">
+                    <span class="material-symbols-sharp">settings</span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="{{url_for('auth_blueprint.logout')}}">
+                    <span class="material-symbols-sharp">logout</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

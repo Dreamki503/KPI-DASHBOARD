@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'styles/teams.css')}}">
+{% endblock %}
+
+{% block content %}
+
+  <h1>TEAMS</h1>
+
+  <div class="filter">
+    <div class="select">
+      <span class="selected">Admin</span>
+      <div class="caret"></div>
+    </div>
+    <ul class="menu">
+      <li class="active">Admin</li>
+      <li>BU Head</li>
+      <li>HR</li>
+      <li>Lead</li>
+    </ul>
+  </div>
+  <div class="forms">
+    <table>
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Team Name</td>
+          <td>Team Lead</td>
+          <td>Number of Members</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for team in teams %}
+        <tr>
+          <th>{{team.id}}</th>
+          <th>{{team.team_name}}</th>
+          <th>{{team.team_lead}}</th>
+          <th>{{team.no_of_members}}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  
+  <script src="{{url_for('static', filename = 'scripts/teams.js')}}"></script>
+{% endblock %}
+
+<h1>DASHBOARD</h1>
+  <div class="teams">
+    <div class="table-top">
+      <h2>EMPLOYEES</h2>
+      <div class="add-data">
+        <span class="material-symbols-sharp">add</span>
+        <h3>Add Data</h3>
+      </div>
+      <!-- <button onclick="showEmployeeDialog(true)">Add Data</button> -->
+    </div>
+    <table class="forms">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Team Name</th>
+                <th>Team Lead</th>
+                <th>Number of members</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for m in teams %}
+            <tr>
+              <td>{{m.id}}</td>
+                <td>{{m.team_name}}</td>
+                <td>{{m.team_lead}}</td>
+                <td>{{m.no_of_members}}</td>
+                <td><a href=""><span class="material-symbols-sharp danger">delete</span></a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+  </div>
+
+  <section>
+    <div class="modal-box">
+        <form action="" method="POST">
+            <h2>Add Employee</h2>
+            <input type="text" class="name" name="name" placeholder="Name">
+            <!-- <input type="email" class="email" name="email" placeholder="Email"> -->
+            <!-- <input type="text" class="department" name="department" placeholder="Department"> -->
+            <input type="text" class="performance_metrics" name="performance_metrics"  placeholder="Password">
+
+            <div class="btn">
+                <button type="submit" class="add-btn">Add</button>
+                <button type="button" class="close-btn">Close</button>
+            </div>
+        </form>
+    </div>
+  </section>
+
+  <script>
+    const section = document.querySelector('section'),
+    overlay = document.querySelector('.overlay'),
+    showBtn = document.querySelector('.add-data'),
+    closeBtn1 = document.querySelector('.close-btn');
+
+    showBtn.addEventListener('click', () => section.classList.add("turnon"));
+    closeBtn1.addEventListener('click', () => section.classList.remove("turnon"));
+</script>
