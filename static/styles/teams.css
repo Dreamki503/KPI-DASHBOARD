@@ -1,0 +1,287 @@
+.table-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.table-top .add-data{
+    background-color: transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    border-radius: var(--border-radius-2);
+}
+
+.table-top .add-data:hover{
+    background: var(--color-primary);
+    color: white;
+    cursor: pointer;
+}
+
+.table-top .add-data div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.table-top .add-data div h3{
+    font-weight: 600;
+}
+
+section{
+    padding: 3rem;
+}
+
+section .add-btn{
+    background-color: transparent;
+    font-size: 0.87rem;
+    font-weight: 600;
+    color: var(--color-success);
+    padding: 10px 26px;
+    border: 2px solid var(--color-success);
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+}
+
+section .close-btn{
+    background-color: transparent;
+    font-size: 0.87rem;
+    font-weight: 600;
+    color: var(--color-danger);
+    padding: 10px 20px;
+    border: 2px solid var(--color-danger);
+    border-radius: var(--border-radius-2);
+    cursor: pointer;
+}
+
+section .add-btn:hover{
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+section .close-btn:hover{
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+
+.modal-box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--box-shadow);
+}
+
+.modal-box{
+    max-width: 380px;
+    width: 100%;
+    padding: 30px 40px;
+    border-radius: 24px;
+    background-color: var(--color-light);
+    opacity: 0;
+    pointer-events: none;
+}
+
+section.turnon .modal-box{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+form{
+    padding: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form h2{
+    margin-bottom: 1rem;
+}
+
+input{
+    width: 100%;
+    color: var(--color-dark);
+    background: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+form .btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+.recent-orders{
+    margin-top: 2rem;
+}
+
+.recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+
+.recent-orders table{
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.recent-orders table:hover{
+    box-sizing: none;
+}
+
+table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+table tbody tr:last-child td{
+    border: none;
+}
+
+.recent-orders a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+/* ====== FILTER ===== */
+.filter{
+    width: 10rem;
+    position: relative;
+    margin: 2rem;
+}
+
+.filter *{
+    box-sizing: border-box;
+}
+
+.select{
+    background: var(--color-background);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px var(--color-primary) solid;
+    border-radius: 0.5rem;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select-clicked{
+    border: 2px var(--color-primary) solid;
+    box-shadow: var(--box-shadow);
+}
+
+.select:hover{
+    background: var(--color-light);
+    /* color: var(--color-white); */
+}
+
+.caret{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid  var(--color-primary);
+    transition: 0.3s;
+}
+
+.caret-rotate{
+    transform: rotate(180deg);
+}
+
+.menu{
+    background: var(--color-background);
+    padding: var(--card-padding);
+    border: 1px var(--color-primary) solid;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-1);
+    position: absolute;
+    top: 3.8em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu li{
+    padding: 10px 20px;
+    margin: 0.3em 0;
+    width: 100%;
+    border-radius: 0.5em;
+    cursor: pointer;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.menu li:hover{
+    background: var(--color-light);
+}
+
+.active{
+    background:var(--color-light);
+    color: var(--color-primary);
+}
+
+.menu-open{
+    display: block;
+    opacity: 1;
+}
+
+.forms{
+    margin-top: 2rem;
+}
+
+.forms h2{
+    margin-bottom: 0.8rem;
+}
+
+.forms table{
+    background: var(--color-white);
+    width: 50%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.forms table:hover{
+    box-sizing: none;
+}
+
+table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+table tbody tr:last-child td{
+    border: none;
+}
+
+.forms a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
