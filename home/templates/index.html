@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="nav">
+        <a href="{{url_for('home.home')}}" rel="prerender"><h2>LO<span class="danger">GO</span></h2></a>
+    </div>
+    <div class="main-body">
+        <h1>WEL<span class="danger">COME</span></h1>
+        <a href="{{url_for('auth_blueprint.login')}}" rel="prerender">Get Started</a>
+    </div>
+{% endblock %}
